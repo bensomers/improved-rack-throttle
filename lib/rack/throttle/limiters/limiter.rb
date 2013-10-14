@@ -164,6 +164,7 @@ module Rack; module Throttle
     # @return [String]
     def cache_key(request)
       id = client_identifier(request)
+      id = "__GLOBAL__" if options[:global]
       id = options[:key].call(request) if options.has_key?(:key)
       id = [options[:key_prefix], id].join(':') if options.has_key?(:key_prefix)
       @matchers.each do |matcher|

@@ -106,6 +106,10 @@ Examples
 
     use Rack::Throttle::Interval, :rules => {:url => /api/, :method => :post}
 
+### Rate-limiting globally rather than per-IP
+
+    use Rack::Throttle::Interval, global: true
+
 Throttling Strategies
 ---------------------
 
