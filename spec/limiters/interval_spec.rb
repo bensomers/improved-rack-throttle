@@ -23,6 +23,14 @@ describe Rack::Throttle::Interval do
     end
     last_response.body.should show_allowed_response
   end
+
+  it "should allow the request if a different source has been seen in the current interval" do
+    Timecop.freeze do
+      get "/foo", {}, "REMOTE_ADDR" => "127.0.0.2"
+      get "/foo", {}, "REMOTE_ADDR" => "127.0.0.3"
+    end
+    last_response.body.should show_allowed_response
+  end
   
   it "should not allow the request if the source has been seen inside the current interval" do
     Timecop.freeze do

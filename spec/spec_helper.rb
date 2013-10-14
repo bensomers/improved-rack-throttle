@@ -2,6 +2,7 @@ require "rspec"
 require "rack/test"
 require "rack/throttle"
 require "timecop"
+require "json"
 
 unless RUBY_VERSION.match(/1\.8/)
   require 'simplecov'
