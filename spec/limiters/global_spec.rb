@@ -6,7 +6,9 @@ describe Rack::Throttle::Interval do
   
   def app
     @target_app ||= example_target_app
-    @app ||= Rack::Throttle::Interval.new(@target_app, global: true, :min => 0.1)
+    @app ||= Rack::Throttle::Interval.new(@target_app,
+                                          :global => true,
+                                          :min => 0.1)
   end
 
   context "global" do
