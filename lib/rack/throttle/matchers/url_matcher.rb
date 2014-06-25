@@ -4,7 +4,7 @@ module Rack; module Throttle
   # requested. For instance, you may care about limiting requests
   # to a machine-consumed API, but not be concerned about requests
   # coming from browsers.
-  # UrlMatchers take Regexp object to matcha gainst the request path.
+  # UrlMatchers take Regexp object to match against the request path.
   class UrlMatcher < Matcher
     ###
     # @param [Rack::Request] request
