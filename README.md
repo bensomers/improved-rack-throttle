@@ -66,6 +66,12 @@ Examples
 
     use Rack::Throttle::Interval, :min => 3.0
 
+### Allowing a maximum of 100 requests per hour, for the foo basic auth
+user
+
+    use Rack::Throttle::Hourly,   :max => 100, :rules => {:basic_auth =>
+/foo/}
+
 ### Allowing a maximum of 100 requests per hour
 
     use Rack::Throttle::Hourly,   :max => 100
@@ -200,6 +206,7 @@ Documentation
   * {Rack::Throttle::MethodMatcher}
   * {Rack::Throttle::UrlMatcher}
   * {Rack::Throttle::UserAgentMatcher}
+  * {Rack::Throttle::BasicAuthMatcher}
 
 Dependencies
 ------------

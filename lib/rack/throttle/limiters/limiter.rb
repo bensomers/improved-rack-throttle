@@ -26,6 +26,7 @@ module Rack; module Throttle
       @matchers += Array(rules[:url]).map { |rule| UrlMatcher.new(rule) } if rules[:url]
       @matchers += Array(rules[:user_agent]).map { |rule| UserAgentMatcher.new(rule) } if rules[:user_agent]
       @matchers += Array(rules[:method]).map { |rule| MethodMatcher.new(rule) } if rules[:method]
+      @matchers += Array(rules[:basic_auth]).map { |rule| BasicAuthMatcher.new(rule) } if rules[:basic_auth]
     end
 
     ##
