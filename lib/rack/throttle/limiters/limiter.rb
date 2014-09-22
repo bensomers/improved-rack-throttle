@@ -23,7 +23,6 @@ module Rack; module Throttle
     def initialize(app, options = {})
       rules = options.delete(:rules) || {}
       @app, @options, @matchers = app, options, []
-      @matchers += Array(rules[:ip]).map { |rule| IpMatcher.new(rule) } if rules[:ip]
       @matchers += Array(rules[:url]).map { |rule| UrlMatcher.new(rule) } if rules[:url]
       @matchers += Array(rules[:user_agent]).map { |rule| UserAgentMatcher.new(rule) } if rules[:user_agent]
       @matchers += Array(rules[:method]).map { |rule| MethodMatcher.new(rule) } if rules[:method]
