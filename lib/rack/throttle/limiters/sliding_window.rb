@@ -26,14 +26,14 @@ module Rack; module Throttle
     def allowed?(request)
       t1 = request_start_time(request)
       key = cache_key(request)
-      bucket = cache_get(key) rescue nil
+      bucket = Marshal.load(cache_get(key)) rescue nil
       bucket ||= LeakyBucket.new(options[:burst], options[:average])
       bucket.maximum, bucket.outflow = options[:burst], options[:average]
       bucket.leak!
       bucket.increment!
       allowed = !bucket.full?
       begin
-        cache_set(key, bucket)
+        cache_set(key, Marshal.dump(bucket))
         allowed
       rescue StandardError => e
         allowed = true
