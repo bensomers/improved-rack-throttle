@@ -76,7 +76,7 @@ PLATFORMS
 
 DEPENDENCIES
   jeweler
-  rack (>= 1.0.0)
+  rack (~> 2.0)
   rack-test
   rake
   redcarpet
