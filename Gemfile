@@ -9,6 +9,6 @@ group :development, :test do
   gem 'yard'
   gem "simplecov", :require => false
   gem 'redcarpet'
-  gem 'rake'
-  gem 'jeweler'
+  gem 'rake', '>= 12.3.3'
+  gem 'jeweler', '>= 2.0.1'
 end
