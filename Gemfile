@@ -8,7 +8,7 @@ group :development, :test do
   gem 'rspec'
   gem 'yard'
   gem "simplecov", :require => false
-  gem 'redcarpet'
+  gem 'redcarpet', '>= 3.5.1'
   gem 'rake'
   gem 'jeweler'
 end
