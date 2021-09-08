@@ -10,5 +10,5 @@ group :development, :test do
   gem "simplecov", :require => false
   gem 'redcarpet'
   gem 'rake'
-  gem 'jeweler'
+  gem 'jeweler', '>= 2.0.1'
 end
