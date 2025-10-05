@@ -1,14 +1,14 @@
 source "http://rubygems.org"
 
-gem "rack", "~> 2.0"
+gem "rack", "~> 2.2", ">= 2.2.18"
 
 group :development, :test do
   gem 'timecop', "<= 0.6.2.2"
-  gem 'rack-test'
+  gem 'rack-test', '>= 0.7.0'
   gem 'rspec'
   gem 'yard'
   gem "simplecov", :require => false
   gem 'redcarpet'
   gem 'rake'
-  gem 'jeweler'
+  gem 'jeweler', '>= 2.1.1'
 end
